@@ -34,7 +34,14 @@ html, body {
   color: var(--text);
   margin: 0;
   padding: 0;
-  -webkit-font-smoothing: antialiased;
+  background-color: #000 !important;
+  min-height: 100%;
+}
+
+body {
+  background-color: #000 !important;
+  background-image: none !important; /* ważne — zapobiega safari glitch */
+  overflow-x: hidden;
 }
 
 h1, h2, h3, .logo-text, .section-title {
