@@ -135,15 +135,38 @@ h1, h2, h3, .logo-text, .section-title {
     }
 
     /* HERO – pełny ekran, centralny tytuł, tło salonu */
+/* HERO — naprawa oversize na iPhone */
+
 .hero {
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 16px 32px;
-  color: #f9fafb;
+    min-height: 100vh;
+    height: 100vh;
+    max-height: 100vh;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 0 16px 32px;
+    color: #f9fafb;
+
+    overflow: hidden;
+
+    /* WAŻNE — blokuje powiększanie na iPhone */
+    -webkit-fill-available: 100%;
+}
+.hero-logo {
+    max-width: 85%;
+    width: 320px;
+    height: auto;
+}
+:root {
+    height: 100%;
+}
+
+html, body {
+    height: -webkit-fill-available;
 }
 
 /* TŁO ZDJĘCIE */
