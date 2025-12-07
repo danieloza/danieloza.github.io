@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Salon Fryzjerski Danex – Wrocław, ul. Średzka 23</title>
   <meta name="description" content="Salon Fryzjerski Danex – profesjonalne strzyżenie, koloryzacja i pielęgnacja włosów we Wrocławiu. Rezerwacja telefoniczna lub przez Booksy." />
   <style>
@@ -25,22 +25,11 @@
       padding: 0;
     }
 
-html {
+html, body {
   margin: 0;
   padding: 0;
-  background-color: #000;  /* czarne tło pod Safari */
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #000; /* fallback */
-  background-image: radial-gradient(circle at top, #101015, #050506);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  color: var(--text);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+  background-color: #000; /* usuwa białe paski */
+  height: 100%;
 }
     a {
       color: inherit;
