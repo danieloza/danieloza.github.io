@@ -1,6 +1,9 @@
         <!DOCTYPE html>
 <html lang="pl">
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Salon Fryzjerski Danex – Wrocław, ul. Średzka 23</title>
@@ -26,10 +29,17 @@
     }
 
 html, body {
+  font-family: 'Cormorant Garamond', serif;
+  background-image: radial-gradient(circle at top, #101015, #050506);
+  color: var(--text);
   margin: 0;
   padding: 0;
-  background-color: #000; /* usuwa białe paski */
-  height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .logo-text, .section-title {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.04em;
 }
     a {
       color: inherit;
