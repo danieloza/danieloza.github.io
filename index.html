@@ -158,7 +158,8 @@ h1, h2, h3, .logo-text, .section-title {
     justify-content: center;
 
     text-align: center;
-    padding: 0 16px 32px;
+      padding: 0 0 32px;
+
     color: #f9fafb;
 
     overflow: hidden;
@@ -190,17 +191,19 @@ html, body {
   filter: brightness(0.45);
   z-index: 0;
   transform-origin: center;
-  animation: heroZoom 24s ease-in-out infinite alternate;
+  animation: heroZoom 14s ease-in-out infinite alternate;
 }
 
-          @keyframes heroZoom {
+
+  @keyframes heroZoom {
   0% {
-    transform: scale(1);
+    transform: scale(1.02);   /* lekko przybliżone na starcie */
   }
   100% {
-    transform: scale(1.06);
+    transform: scale(1.08);   /* mocniej wjeżdża */
   }
 }
+
 
           
 /* PRZYCIEMNIENIE */
