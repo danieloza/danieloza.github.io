@@ -991,6 +991,16 @@ html, body {
     }
 }
 
+/* === POPRAWA ROZMIARU REVLON NA DUŻYCH EKRANACH === */
+@media (min-width: 1024px) {
+  .revlon-item img {
+    width: clamp(260px, 45%, 480px);
+
+    max-width: 500px;
+    margin: 0 auto;
+    display: block;
+  }
+}
 
 
 </style>
