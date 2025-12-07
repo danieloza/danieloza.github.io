@@ -123,16 +123,14 @@
       color: #f9fafb;
     }
 
-    .hero-bg {
-  position: absolute;
-  inset: 0;
-  background-image: url("./firma-handlowo-uslugowa-danex.jpg");
-  background-size: cover;
-  background-position: center;
-  filter: grayscale(30%) contrast(1.1) brightness(0.46);
-  transform: scale(1.04);
-  z-index: -2;
-
+    .hero-bg: url('./cf18b942-0ae6-447f-98f3-8bf7b5b99756.png');
+      inset: 0;
+      background-image: url("./firma-handlowo-uslugowa-danex.jpeg");
+      background-size: cover;
+      background-position: center;
+      filter: grayscale(30%) contrast(1.1) brightness(0.46);
+      transform: scale(1.04);
+      z-index: -2;
     }
 
     .hero-overlay {
@@ -433,7 +431,24 @@
         grid-template-columns: minmax(0, 1fr);
       }
     }
-  </style>
+    /* Logo animation enhancements */
+    .hero-logo img {
+      animation: logoFloat 6s ease-in-out infinite,
+                 logoGlow 3s ease-in-out infinite alternate;
+      filter: drop-shadow(0 0 8px rgba(255,255,255,0.35));
+    }
+
+    @keyframes logoFloat {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes logoGlow {
+      0% { filter: drop-shadow(0 0 4px rgba(255,255,255,0.15)); }
+      100% { filter: drop-shadow(0 0 14px rgba(255,255,255,0.55)); }
+    }
+</style>
 </head>
 <body>
   <div class="page">
@@ -459,7 +474,7 @@
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
         <div class="hero-inner">
-          <div class="hero-eyebrow">Wrocław • Fabryczna</div>
+          <div class="hero-eyebrow">Wrocław • Średzka 23</div>
           <div style="display:flex; justify-content:center; margin-bottom:16px;">
   <img src="./logo-danex-revlon-hero.png" alt="Danex Revlon Professional" style="max-width:340px; width:100%; height:auto; opacity:0.92;" />
 </div>
