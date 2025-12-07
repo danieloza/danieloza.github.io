@@ -746,21 +746,30 @@ html, body {
 
 /* ULTRA PREMIUM SCROLL REVEAL (Apple vibe) */
 
+/* ULTRA DELIKATNY SCROLL REVEAL (Apple vibes) */
 .reveal {
   opacity: 0;
-  transform: translateY(32px) scale(0.985);
-  filter: blur(10px);
+  transform: translateY(18px);
+  filter: blur(4px);
   transition:
-    opacity 0.9s cubic-bezier(0.19, 1, 0.22, 1),
-    transform 0.9s cubic-bezier(0.19, 1, 0.22, 1),
-    filter 0.9s ease-out;
-  will-change: opacity, transform, filter;
+    opacity 700ms ease-out,
+    transform 700ms ease-out,
+    filter 700ms ease-out;
 }
 
-.reveal.visible {
+.reveal.is-visible {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  transform: translateY(0);
   filter: blur(0);
+}
+
+/* Gdy ktoś ma wyłączone animacje – zawsze pokazuj */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
 }
 
 /* === PREMIUM ANIMACJE HERO === */
@@ -1080,95 +1089,32 @@ html, body {
     </footer>
   </div>
 
-  <script>
-  // Rok w stopce
-  document.getElementById("year").textContent = new Date().getFullYear();
+ <script>
+  // Smooth scroll (premium)
+  document.documentElement.style.scrollBehavior = 'smooth';
 
-  // REVLON – slider + auto-play + dots
-  (function () {
-    const slider = document.querySelector('.revlon-slider');
-    if (!slider) return;
-
-    const slides = slider.querySelectorAll('.revlon-slide');
-    const dots = slider.querySelectorAll('.revlon-dot');
-    const prevBtn = slider.querySelector('.revlon-arrow--prev');
-    const nextBtn = slider.querySelector('.revlon-arrow--next');
-    let current = 0;
-    let timer;
-
-    function goToSlide(index) {
-      slides[current].classList.remove('is-active');
-      dots[current].classList.remove('is-active');
-
-      current = (index + slides.length) % slides.length;
-
-      slides[current].classList.add('is-active');
-      dots[current].classList.add('is-active');
-    }
-
-    function nextSlide() {
-      goToSlide(current + 1);
-    }
-
-    function prevSlide() {
-      goToSlide(current - 1);
-    }
-
-    function startAutoPlay() {
-      stopAutoPlay();
-      timer = setInterval(nextSlide, 6000);
-    }
-
-    function stopAutoPlay() {
-      if (timer) clearInterval(timer);
-    }
-
-    nextBtn.addEventListener('click', () => {
-      nextSlide();
-      startAutoPlay();
-    });
-
-    prevBtn.addEventListener('click', () => {
-      prevSlide();
-      startAutoPlay();
-    });
-
-    dots.forEach(dot => {
-      dot.addEventListener('click', () => {
-        const index = parseInt(dot.dataset.index, 10);
-        goToSlide(index);
-        startAutoPlay();
-      });
-    });
-
-    slider.addEventListener('mouseenter', stopAutoPlay);
-    slider.addEventListener('mouseleave', startAutoPlay);
-
-    startAutoPlay();
-  })();
-
-  // Fade-in sekcji Revlon przy scrollu
-  (function () {
-    const section = document.querySelector('.revlon-section');
-    if (!section || !('IntersectionObserver' in window)) {
-      if (section) section.classList.add('is-visible');
+  // Delikatny scroll reveal
+  document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window) || !elements.length) {
+      // Stare przeglądarki – wszystko od razu widoczne
+      elements.forEach(el => el.classList.add('is-visible'));
       return;
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            section.classList.add('is-visible');
-            observer.disconnect();
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
 
-    observer.observe(section);
-  })();
+    elements.forEach(el => observer.observe(el));
+  });
 </script>
 </body>
 </html>
