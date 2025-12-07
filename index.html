@@ -842,6 +842,66 @@ html, body {
   z-index: 1;
 }
 
+/* KAFELKI – premium background z galerii */
+.collection-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 900px) {
+  .collection-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.collection-card {
+  position: relative;
+  display: block;
+  min-height: 220px;
+  border-radius: 32px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.collection-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.03);
+  filter: brightness(0.55);
+}
+
+/* KONKRETNE ZDJĘCIA Z GALERII */
+.collection-bg--koloryzacje {
+  background-image: url("./galeria1.png");
+}
+
+.collection-bg--krotkie {
+  background-image: url("./galeria2.png");
+}
+
+.collection-bg--stylizacje {
+  background-image: url("./galeria3.png");
+}
+
+.collection-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(0,0,0,0.1), rgba(0,0,0,0.75));
+}
+
+.collection-label {
+  position: relative;
+  z-index: 2;
+  padding: 32px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+
 </style>
 </head>
 <body>
