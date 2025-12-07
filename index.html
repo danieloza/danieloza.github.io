@@ -188,9 +188,21 @@ html, body {
   background-position: center;
   background-repeat: no-repeat;
   filter: brightness(0.45);
-  z-index: 0;          /* ← BYŁO -1 */
+  z-index: 0;
+  transform-origin: center;
+  animation: heroZoom 24s ease-in-out infinite alternate;
 }
 
+          @keyframes heroZoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.06);
+  }
+}
+
+          
 /* PRZYCIEMNIENIE */
 .hero-overlay {
   position: absolute;
