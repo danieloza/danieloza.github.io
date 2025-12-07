@@ -30,7 +30,17 @@
       padding: 0;
     }
 
-html, body {
+html {
+    scroll-behavior: smooth;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+.section {
+    scroll-margin-top: 96px; /* wysokość nagłówka */
+}
+ body {
   margin: 0;
   padding: 0;
   background-color: #000;
@@ -734,6 +744,25 @@ html, body {
   100% { transform: translateY(-6px); }
 }
 
+/* ULTRA PREMIUM SCROLL REVEAL (Apple vibe) */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px) scale(0.985);
+  filter: blur(10px);
+  transition:
+    opacity 0.9s cubic-bezier(0.19, 1, 0.22, 1),
+    transform 0.9s cubic-bezier(0.19, 1, 0.22, 1),
+    filter 0.9s ease-out;
+  will-change: opacity, transform, filter;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
 </style>
 </head>
 <body>
@@ -782,113 +811,113 @@ html, body {
 
       <!-- KOLEKCJE / GŁÓWNE OBSZARY USŁUG -->
       <section class="section" id="oferta">
-        <div class="section-header">
+        <div class="section-header reveal">
           <div>
-            <div class="section-kicker">Usługi</div>
+            <div class="section-sub reveal">Usługi</div>
             <h2 class="section-title">Kolor, cięcie, pielęgnacja</h2>
           </div>
           <p class="section-sub">Trzy główne obszary, w których możemy odmienić Twoje włosy. Wybierz to, czego potrzebujesz najbardziej.</p>
         </div>
 
-        <div class="collection-grid">
-          <a class="collection-card" href="#galeria">
-            <div class="collection-bg" style="background-image:url('./galeria1.png');"></div>
-            <div class="collection-overlay"></div>
-            <div class="collection-label">Koloryzacje & blondy</div>
-          </a>
+       <div class="collection-grid">
+  <a class="collection-card reveal" href="#galeria">
+    <div class="collection-bg" ...></div>
+    <div class="collection-overlay"></div>
+    <div class="collection-label">Koloryzacje</div>
+  </a>
 
-          <a class="collection-card" href="#cennik">
-            <div class="collection-bg" style="background-image:url('./galeria4.png');"></div>
-            <div class="collection-overlay"></div>
-            <div class="collection-label">Strzyżenia damskie</div>
-          </a>
+  <a class="collection-card reveal" href="#cennik">
+    <div class="collection-bg" ...></div>
+    <div class="collection-overlay"></div>
+    <div class="collection-label">Strzyżenia krótkie</div>
+  </a>
 
-          <a class="collection-card" href="#cennik">
-            <div class="collection-bg" style="background-image:url('./galeria7.png');"></div>
-            <div class="collection-overlay"></div>
-            <div class="collection-label">Strzyżenia krótkie</div>
-          </a>
-        </div>
+  <a class="collection-card reveal" href="#jakies-id">
+    <div class="collection-bg" ...></div>
+    <div class="collection-overlay"></div>
+    <div class="collection-label">Strzyżenia męskie</div>
+  </a>
+</div>
       </section>
 
       <!-- CENNIK (wyciąg z Booksy) -->
       <section class="section" id="cennik">
-        <div class="section-header">
+        <div class="section-header reveal">
           <div>
-            <div class="section-kicker">Cennik</div>
+            <div class="section-sub reveal">Cennik</div>
             <h2 class="section-title">Wybrane usługi</h2>
           </div>
           <p class="section-sub">Pełny i zawsze aktualny cennik znajdziesz na Booksy. Poniżej kilka najczęściej wybieranych usług.</p>
         </div>
 
         <div class="grid-3">
-          <article class="card">
+          <article class="card reveal">
             <h3>Strzyżenie damskie włosy krótkie</h3>
             <p>Klasyczne strzyżenie włosów krótkich, z konsultacją i modelowaniem.</p>
             <div class="price-tag">od 70,00 zł+</div>
           </article>
 
-          <article class="card">
+          <article class="card reveal">
             <h3>Strzyżenie damskie włosy średnie</h3>
             <p>Strzyżenie z dopasowaniem fryzury do kształtu twarzy i rodzaju włosów.</p>
             <div class="price-tag">od 80,00 zł+</div>
           </article>
 
-          <article class="card">
+          <article class="card reveal">
             <h3>Strzyżenie damskie włosy długie</h3>
             <p>Modelowanie i podcięcie włosów długich z zachowaniem ich objętości.</p>
             <div class="price-tag">od 90,00 zł+</div>
           </article>
 
-          <article class="card">
+          <article class="card reveal">
             <h3>Strzyżenie męskie</h3>
             <p>Klasyczne lub nowoczesne cięcie, dopasowane do Twojego stylu.</p>
             <div class="price-tag">60,00 zł · 20 min</div>
           </article>
 
-          <article class="card">
+          <article class="card reveal">
             <h3>Strzyżenie męskie z myciem włosów</h3>
             <p>Strzyżenie z myciem i stylizacją – gotowy look prosto z fotela.</p>
             <div class="price-tag">70,00 zł · 30 min</div>
           </article>
 
-          <article class="card">
+          <article class="card reveal">
             <h3>Strzyżenie dzieci (chłopcy / dziewczynki)</h3>
             <p>Delikatne podejście do najmłodszych, cierpliwość i przyjazna atmosfera.</p>
             <div class="price-tag">60,00 zł · 20–30 min</div>
           </article>
 
-          <article class="card">
+          <article class="card reveal">
             <h3>Farbowanie włosów krótkich – komplet</h3>
             <p>Koloryzacja całościowa z pielęgnacją, dobrana do Twojej urody.</p>
             <div class="price-tag">230,00 zł</div>
           </article>
 
-          <article class="card">
+          <article class="card reveal">
             <h3>Farbowanie włosów średnich – komplet</h3>
             <p>Koloryzacja włosów średnich z myciem i modelowaniem.</p>
             <div class="price-tag">250,00 zł</div>
           </article>
 
-          <article class="card">
+          <article class="card reveal">
             <h3>Farbowanie włosów długich – komplet</h3>
             <p>Pełna koloryzacja włosów długich z wykończeniem fryzury.</p>
             <div class="price-tag">270,00 zł</div>
           </article>
 
-          <article class="card">
+          <article class="card reveal">
             <h3>Baleyage komplet włosy średnie</h3>
             <p>Rozświetlenie i nadanie głębi kolorowi włosów średniej długości.</p>
             <div class="price-tag">270,00 zł</div>
           </article>
 
-          <article class="card">
+          <article class="card reveal">
             <h3>Regeneracja i odbudowa włosy średnie</h3>
             <p>Dogłębny zabieg wzmacniający dla włosów osłabionych i suchych.</p>
             <div class="price-tag">od 190,00 zł+</div>
           </article>
 
-          <article class="card">
+          <article class="card reveal">
             <h3>Laminowanie włosów – włosy średnie</h3>
             <p>Wygładzenie i dodatkowy blask, idealne przed ważnymi wyjściami.</p>
             <div class="price-tag">od 180,00 zł+</div>
@@ -903,33 +932,33 @@ html, body {
 
       <!-- GALERIA -->
       <section class="section" id="galeria">
-        <div class="section-header">
+        <div class="section-header reveal">
           <div>
-            <div class="section-kicker">Galeria</div>
+            <div class="section-sub reveal">Galeria</div>
             <h2 class="section-title">Nasze realizacje</h2>
           </div>
           <p class="section-sub">Blondy, rozświetlenia, krótkie cięcia i klasyczne formy – zobacz efekty pracy naszego zespołu.</p>
         </div>
 
         <div class="gallery-grid">
-          <img src="./galeria1.png" alt="Koloryzacja blond fale" />
-          <img src="./galeria2.png" alt="Fale blond od tyłu" />
-          <img src="./galeria3.png" alt="Długie proste włosy" />
-          <img src="./galeria4.png" alt="Strzyżenie średniej długości" />
-          <img src="./galeria5.png" alt="Chłodny blond, proste włosy" />
-          <img src="./galeria6.png" alt="Rozjaśnione włosy, efekt blond" />
-          <img src="./galeria7.png" alt="Krótkie strzyżenie blond" />
-          <img src="./galeria8.png" alt="Warstwowe strzyżenie blond" />
-          <img src="./galeria9.png" alt="Produkty Revlon Magnet" />
-          <img src="./galeria10.png" alt="Produkty Revlon Magnet blondes" />
+          <img class="reveal" src="./galeria1.png" alt="Koloryzacja blond fale" />
+          <img class="reveal" src="./galeria2.png" alt="Fale blond od tyłu" />
+          <img class="reveal" src="./galeria3.png" alt="Długie proste włosy" />
+          <img class="reveal" src="./galeria4.png" alt="Strzyżenie średniej długości" />
+          <img class="reveal" src="./galeria5.png" alt="Chłodny blond, proste włosy" />
+          <img class="reveal" src="./galeria6.png" alt="Rozjaśnione włosy, efekt blond" />
+          <img class="reveal" src="./galeria7.png" alt="Krótkie strzyżenie blond" />
+          <img class="reveal" src="./galeria8.png" alt="Warstwowe strzyżenie blond" />
+          <img class="reveal" src="./galeria9.png" alt="Produkty Revlon Magnet" />
+          <img class="reveal" src="./galeria10.png" alt="Produkty Revlon Magnet blondes" />
         </div>
       </section>
 
       <!-- REVLON PARTNER -->
      <section class="section revlon-section" id="revlon">
-  <div class="section-header">
+  <div class="section-header reveal">
     <div>
-      <div class="section-kicker">Partner</div>
+      <div class="section-sub reveal">Partner</div>
       <h2 class="section-title">Revlon Professional Magnet™</h2>
     </div>
     <p class="section-sub">
@@ -963,9 +992,9 @@ html, body {
 
       <!-- KONTAKT I DOJAZD -->
       <section class="section" id="kontakt">
-        <div class="section-header">
+        <div class="section-header reveal">
           <div>
-            <div class="section-kicker">Kontakt</div>
+            <div class="section-sub reveal">Kontakt</div>
             <h2 class="section-title">Umów wizytę</h2>
           </div>
           <p class="section-sub">Zadzwoń lub zarezerwuj termin online. Chętnie doradzimy Ci najlepszą usługę.</p>
