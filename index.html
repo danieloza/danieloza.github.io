@@ -1002,7 +1002,76 @@ html, body {
   }
 }
 
+        /* REVLON – rozmiar obrazków */
+.revlon-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 
+/* bazowo (telefon) – zostaje tak jak jest: obraz zajmuje całą szerokość karty */
+.revlon-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+}
+
+/* DESKTOP – zmniejszamy obrazki i trzymamy je w ładnym rzędzie */
+@media (min-width: 992px) {
+  .revlon-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .revlon-item {
+    flex: 0 0 320px;   /* szerokość pojedynczej karty */
+  }
+
+  .revlon-item img {
+    max-width: 320px;  /* TU jest ograniczenie rozmiaru na komputerze */
+    width: 100%;
+  }
+}
+
+/* REVLON – rozmiar obrazków */
+.revlon-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.revlon-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg, 20px);
+}
+
+/* desktop – zmniejszamy obrazki */
+@media (min-width: 992px) {
+  .revlon-grid {
+    flex-direction: row;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 40px auto 0;
+    gap: 40px;
+  }
+
+  .revlon-item {
+    flex: 0 0 320px;
+  }
+
+  .revlon-item img {
+    max-width: 320px;
+  }
+}
+
+        
 </style>
 </head>
 <body>
@@ -1219,6 +1288,24 @@ html, body {
       koloryzacji i zabiegów blond. Zaawansowane formuły, mniej uszkodzeń,
       więcej blasku.
     </p>
+
+<div class="revlon-grid">
+
+  <figure class="revlon-item reveal">
+    <img src="./revlon3.jpg" alt="Revlon Magnet – 30x mocniejsze włosy">
+  </figure>
+
+  <figure class="revlon-item reveal">
+    <img src="./revlon1.png" alt="Revlon Magnet – pielęgnacja po zabiegach">
+  </figure>
+
+  <figure class="revlon-item reveal">
+    <img src="./revlon2.png" alt="Revlon Magnet Blondes – rozjaśnianie blondów">
+  </figure>
+
+</div>
+
+          
   </div>
 
   <div class="revlon-grid">
