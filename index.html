@@ -606,6 +606,111 @@ h1, h2, h3, .logo-text, .section-title {
   }
 }
 
+/* === PREMIUM ANIMACJE HERO === */
+
+.hero {
+  overflow: hidden;
+}
+
+/* Delikatny zoom tła */
+.hero-bg {
+  transform: scale(1.06);
+  transform-origin: center;
+  animation: heroZoomOut 18s ease-out forwards;
+}
+
+/* Overlay lekko się „odkrywa” */
+.hero-overlay {
+  animation: heroOverlayFade 1.2s ease-out both;
+}
+
+/* Cała zawartość hero wjeżdża z dołu */
+.hero-inner {
+  animation: heroFadeUp 1s cubic-bezier(0.19, 1, 0.22, 1) 0.25s both;
+}
+
+/* Logo – minimalny „oddech” */
+.hero-logo {
+  animation: heroLogoFloat 9s ease-in-out 1.2s infinite alternate;
+}
+
+/* Tekst pod logo */
+.hero-lead {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: heroStagger 0.8s ease-out 0.45s forwards;
+}
+
+/* Pasek z oceną / adresem */
+.hero-badges {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: heroStagger 0.8s ease-out 0.65s forwards;
+}
+
+/* Przyciski */
+.hero-actions {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: heroStagger 0.8s ease-out 0.85s forwards;
+}
+
+/* Godziny otwarcia */
+.hero-hours {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: heroStagger 0.8s ease-out 1.05s forwards;
+}
+
+/* Przyciski – premium hover */
+.btn,
+.hero-actions a {
+  transition: transform 0.25s ease-out,
+              box-shadow 0.25s ease-out,
+              background-color 0.25s ease-out,
+              color 0.25s ease-out;
+  will-change: transform, box-shadow;
+}
+
+.btn-primary,
+.hero-actions .btn-primary {
+  box-shadow: 0 14px 35px rgba(0,0,0,0.6);
+}
+
+.btn:hover,
+.hero-actions a:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.75),
+              0 0 0 1px rgba(255,255,255,0.13);
+}
+
+/* --- KEYFRAMES --- */
+
+@keyframes heroZoomOut {
+  0%   { transform: scale(1.12); filter: brightness(0.35); }
+  100% { transform: scale(1.03); filter: brightness(0.45); }
+}
+
+@keyframes heroOverlayFade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes heroFadeUp {
+  0%   { opacity: 0; transform: translateY(26px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroStagger {
+  0%   { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroLogoFloat {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-6px); }
+}
+
 </style>
 </head>
 <body>
@@ -634,13 +739,13 @@ h1, h2, h3, .logo-text, .section-title {
         <div class="hero-inner">
           <div class="hero-eyebrow">Wrocław • Średzka 23</div>
           <div style="display:flex; justify-content:center; margin-bottom:16px;">
-  <img src="./logo-danex-revlon-hero.png" alt="Danex Revlon Professional" style="max-width:340px; width:100%; height:auto; opacity:0.92;" />
+<img src="./logo-danex-revlon-hero.png" class="hero-logo" alt="Danex Revlon Professional">
 </div>
-          <p class="hero-sub">
+          <p class="hero-sub hero-lead">
             Salon fryzjerski z ponad 25-letnią historią. Koloryzacje blond, cięcia dopasowane do Ciebie
             i profesjonalna pielęgnacja włosów z wykorzystaniem produktów Revlon Professional.
           </p>
-          <div class="hero-meta-row">
+          <div class="hero-meta-row hero-badges">
             <div class="pill-outline">★ 4.9 / 5 na Booksy (495 opinii)</div>
             <div class="pill-outline">ul. Średzka 23, Wrocław</div>
           </div>
@@ -648,7 +753,7 @@ h1, h2, h3, .logo-text, .section-title {
             <a href="tel:504594451" class="btn btn-primary">Zadzwoń: 504 594 451</a>
             <a href="https://booksy.com/pl-pl/169149_salon-fryzjerski-danex_fryzjer_13750_wroclaw" target="_blank" rel="noopener" class="btn btn-ghost">Rezerwacja online</a>
           </div>
-          <p class="hero-note">Pon–pt 9:00–19:00 • sobota 9:00–15:00</p>
+<p class="hero-note hero-hours">Pon–pt 9:00–19:00 • sobota 9:00–15:00</p>
         </div>
       </section>
 
