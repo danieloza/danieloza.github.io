@@ -900,6 +900,29 @@ html, body {
   text-transform: uppercase;
   font-size: 12px;
 }
+.revlon-grid {
+  display: grid;
+  gap: 24px;
+}
+
+@media (min-width: 900px) {
+  .revlon-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.revlon-item {
+  border-radius: 32px;
+  overflow: hidden;
+  background: var(--bg-soft);
+}
+
+.revlon-item img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
 
 
 </style>
@@ -948,37 +971,51 @@ html, body {
         </div>
       </section>
 
-      <!-- KOLEKCJE / GŁÓWNE OBSZARY USŁUG -->
-      <section class="section" id="oferta">
-        <div class="section-header reveal">
-          <div>
-            <div class="section-sub reveal">Usługi</div>
-            <h2 class="section-title">Kolor, cięcie, pielęgnacja</h2>
-          </div>
-          <p class="section-sub">Trzy główne obszary, w których możemy odmienić Twoje włosy. Wybierz to, czego potrzebujesz najbardziej.</p>
-        </div>
+   
+    <!-- KOLEKCJE / GŁÓWNE OBSZARY USŁUG -->
+<section class="section" id="oferta">
+  <div class="section-header reveal">
+    <div class="section-sub reveal">Usługi</div>
+    <h2 class="section-title reveal">Kolor, cięcie, pielęgnacja</h2>
+    <p class="section-sub">
+      Trzy główne obszary, w których możemy odmienić Twoje włosy.
+      Wybierz to, czego potrzebujesz najbardziej.
+    </p>
+  </div>
 
-      <div class="collection-grid">
+  <div class="collection-grid">
+    <!-- KOLORYZACJE -->
     <a class="collection-card reveal" href="#galeria">
-        <div class="collection-bg"></div>
-        <div class="collection-overlay"></div>
-        <div class="collection-label">Koloryzacje</div>
+      <div
+        class="collection-bg"
+        style="background-image: url('./galeria1.png');"
+      ></div>
+      <div class="collection-overlay"></div>
+      <div class="collection-label">Koloryzacje</div>
     </a>
 
+    <!-- STRZYŻENIA KRÓTKIE -->
     <a class="collection-card reveal" href="#cennik">
-        <div class="collection-bg"></div>
-        <div class="collection-overlay"></div>
-        <div class="collection-label">Strzyżenia krótkie</div>
+      <div
+        class="collection-bg"
+        style="background-image: url('./galeria4.png');"
+      ></div>
+      <div class="collection-overlay"></div>
+      <div class="collection-label">Strzyżenia krótkie</div>
     </a>
 
-    <a class="collection-card reveal" href="#jakies">
-        <div class="collection-bg"></div>
-        <div class="collection-overlay"></div>
-        <div class="collection-label">Stylizacje damskie</div>
+    <!-- STYLIZACJE DAMSKIE -->
+    <a class="collection-card reveal" href="#cennik">
+      <div
+        class="collection-bg"
+        style="background-image: url('./galeria5.png');"
+      ></div>
+      <div class="collection-overlay"></div>
+      <div class="collection-label">Stylizacje damskie</div>
     </a>
-</div>
+  </div>
+</section>
 
-      </section>
 
       <!-- CENNIK (wyciąg z Booksy) -->
       <section class="section" id="cennik">
@@ -1094,40 +1131,33 @@ html, body {
         </div>
       </section>
 
-      <!-- REVLON PARTNER -->
-     <section class="section revlon-section" id="revlon">
+     <!-- PARTNER: REVLON -->
+<section class="section" id="revlon">
   <div class="section-header reveal">
-    <div>
-      <div class="section-sub reveal">Partner</div>
-      <h2 class="section-title">Revlon Professional Magnet™</h2>
-    </div>
+    <div class="section-sub reveal">Partner</div>
+    <h2 class="section-title reveal">Revlon Professional Magnet™</h2>
     <p class="section-sub">
-      System Magnet™ chroni włosy podczas zabiegów chemicznych – rozjaśniania, koloryzacji
-      i zabiegów blond. Zaawansowane formuły, mniej uszkodzeń, więcej blasku.
+      System Magnet™ chroni włosy podczas zabiegów chemicznych – rozjaśniania,
+      koloryzacji i zabiegów blond. Zaawansowane formuły, mniej uszkodzeń,
+      więcej blasku.
     </p>
   </div>
 
-  <div class="revlon-slider">
-    <div class="revlon-slide is-active">
-      <img src="./revlon3.jpg" alt="Revlon Magnet – 30x mocniejsze włosy" />
-    </div>
-    <div class="revlon-slide">
-      <img src="./revlon1.png" alt="Revlon Magnet – pielęgnacja po zabiegach" />
-    </div>
-    <div class="revlon-slide">
-      <img src="./revlon2.png" alt="Revlon Magnet Blondes – rozjaśnianie blondów" />
-    </div>
+  <div class="revlon-grid">
+    <figure class="revlon-item reveal">
+      <img src="./revlon3.jpg" alt="Revlon Magnet – 30x mocniejsze włosy">
+    </figure>
 
-    <button class="revlon-arrow revlon-arrow--prev" type="button" aria-label="Poprzedni slajd">‹</button>
-    <button class="revlon-arrow revlon-arrow--next" type="button" aria-label="Następny slajd">›</button>
+    <figure class="revlon-item reveal">
+      <img src="./revlon1.png" alt="Revlon Magnet – pielęgnacja po zabiegach">
+    </figure>
 
-    <div class="revlon-dots" aria-hidden="true">
-      <button class="revlon-dot is-active" data-index="0"></button>
-      <button class="revlon-dot" data-index="1"></button>
-      <button class="revlon-dot" data-index="2"></button>
-    </div>
+    <figure class="revlon-item reveal">
+      <img src="./revlon2.png" alt="Revlon Magnet Blondes – rozjaśnianie blondów">
+    </figure>
   </div>
 </section>
+
 
 
       <!-- KONTAKT I DOJAZD -->
